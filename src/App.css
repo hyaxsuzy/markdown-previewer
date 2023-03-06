@@ -1,38 +1,167 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+html {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2d2d30;
 }
 
-.App-header {
-  background-color: #282c34;
+/* generalized css */
+
+code {
+  background-color: #1e1e1e;
+  color: #4fc3f7;
+  font-weight: bold;
+}
+
+pre code {
+  display: block;
+}
+
+.hljs-comment {
+  color: #388e3c;
+}
+
+.hljs-keyword {
+  color: #ce93d8;
+}
+
+.hljs-params {
+  color: #007acc;
+}
+
+.hljs-title.function_ {
+  color: #ffb74d;
+}
+
+.hljs-string {
+  color: #e57373;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+}
+
+.window {
+  margin: 25px auto;
+  width: 45vw;
+  min-height: 45vh;
+  background-color: #EEEEEE;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.border {
+  border: 1px solid #1e1e1e;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shadow {
+  box-shadow: 1px 1px 10px 2px #1e1e1e;
+}
+
+.toolbar {
+  position: relative;
+  padding: 5px;
+  background-color: #929AAB;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Russo One', sans-serif;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.title::before {
+  content: ' ';
+  white-space: pre;
+}
+
+.document {
+  border-top: none;
+  flex-grow: 1;
+  background-color: inherit;
+  padding: 15px;
+  resize: vertical;
+  outline: none;
+}
+
+.max-control {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+/* specialized css */
+
+.editor {
+  width: 60vw;
+}
+
+.previewer {
+  width: 80vw;
+  overflow-wrap: break-word;
+}
+
+.previewer h1 {
+  border-bottom: 2px solid #252526;
+  margin-top: 10px;
+}
+
+.previewer h2 {
+  border-bottom: 1px solid #252526;
+}
+
+.previewer table {
+  border-collapse: collapse;
+  /* text-indent: initial;
+  border-spacing: 2px; */
+}
+
+.previewer td,
+.previewer th {
+  border: 2px solid;
+  text-align: justify;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.previewer blockquote {
+  border-left: 3px solid black;
+  color: black;
+  padding-left: 5px;
+  margin-left: 25px;
+}
+
+.previewer img {
+  display: block;
+  max-width: 90%;
+  margin: 2rem auto;
+}
+
+/* interactive css */
+
+.max-control:hover {
+  opacity: 1;
+}
+
+.maxed {
+  width: 90vw;
+  min-height: 90vh;
+}
+
+.hidden {
+  display: none;
 }
